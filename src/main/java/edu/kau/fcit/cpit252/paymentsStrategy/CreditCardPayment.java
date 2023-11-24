@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-public class CreditCardPayment {
+public class CreditCardPayment implements Payment{
     private String transactionId;
     private String name;
     private String cardNumber;
@@ -21,6 +21,12 @@ public class CreditCardPayment {
         this.cvv = cvv;
         this.monthYearExpiration = monthYearExpiration;
         this.date = new Date();
+    }
+
+    @Override
+    public void pay(double amount){
+        // Write the logic for credit card payment
+        System.out.println(amount + "was processed on a credit card.");
     }
 
     @Override

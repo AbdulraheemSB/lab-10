@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-public class PayPalPayment {
+public class PayPalPayment implements Payment{
     private String transactionId;
     private String email;
     public String merchant;
@@ -15,6 +15,12 @@ public class PayPalPayment {
         this.merchant = merchant;
         this.date = new Date();
         this.transactionId = UUID.randomUUID().toString();
+    }
+
+    @Override
+    public void pay(double amount){
+        // Write the logic for PayPal payment processing
+        System.out.println(amount + " was processed via PayPal.");
     }
 
     @Override
